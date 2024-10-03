@@ -4,11 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc6edaff-1a0d-4387-9b85-975879a071c4" name="Changes" comment="" />
+    <list default="true" id="bc6edaff-1a0d-4387-9b85-975879a071c4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tdd-orders/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tdd-orders/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tdd-orders/src/main/java/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/tdd-orders/src/main/java/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tdd-orders/src/main/java/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/tdd-orders/src/main/java/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tdd-orders/src/main/java/repository/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/tdd-orders/src/main/java/repository/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tdd-orders/src/main/java/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/tdd-orders/src/main/java/repository/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tdd-orders/src/main/java/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/tdd-orders/src/main/java/service/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tdd-orders/src/main/java/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/tdd-orders/src/main/java/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tdd-orders/src/main/java/service/impl/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/tdd-orders/src/main/java/service/impl/CustomerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tdd-orders/src/main/java/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/tdd-orders/src/main/java/service/impl/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tdd-orders/src/test/java/service/impl/CustomerServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tdd-orders/src/test/java/service/impl/CustomerServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tdd-orders/src/test/java/service/impl/ProductServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tdd-orders/src/test/java/service/impl/ProductServiceImplTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Record" />
+        <option value="JUnit5 Test Class" />
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -24,13 +50,130 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.CustomerMapperTest.customerEntityToDtoShouldReturnCustomer.executor": "Run",
+    "JUnit.CustomerMapperTest.executor": "Run",
+    "JUnit.CustomerServiceImplTest.createCustomerShouldCallRepositoryAndMapper1Time.executor": "Run",
+    "JUnit.CustomerServiceImplTest.deleteCustomerShouldCallRepository1Time.executor": "Run",
+    "JUnit.CustomerServiceImplTest.executor": "Run",
+    "JUnit.CustomerServiceImplTest.getCustomerByIdShouldReturnCustomer.executor": "Run",
+    "JUnit.CustomerServiceImplTest.updateCustomerShouldCallRepositoryAndMapper1Time.executor": "Run",
+    "JUnit.ProductServiceImplTest.createProductShouldCallRepositoryAndMapper1Time.executor": "Run",
+    "JUnit.ProductServiceImplTest.executor": "Run",
+    "JUnit.ProductServiceImplTest.updateStockShouldCallRepository2Times.executor": "Run",
+    "Maven.tdd-orders [clean].executor": "Run",
+    "Maven.tdd-orders [compile].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="mapper" />
+      <recent name="service.impl" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.ProductServiceImplTest">
+    <configuration name="CustomerServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tdd-orders" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="service.impl" />
+      <option name="MAIN_CLASS_NAME" value="service.impl.CustomerServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerServiceImplTest.deleteCustomerShouldCallRepository1Time" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tdd-orders" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="service.impl" />
+      <option name="MAIN_CLASS_NAME" value="service.impl.CustomerServiceImplTest" />
+      <option name="METHOD_NAME" value="deleteCustomerShouldCallRepository1Time" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tdd-orders" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="service.impl" />
+      <option name="MAIN_CLASS_NAME" value="service.impl.ProductServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductServiceImplTest.createProductShouldCallRepositoryAndMapper1Time" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tdd-orders" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="service.impl" />
+      <option name="MAIN_CLASS_NAME" value="service.impl.ProductServiceImplTest" />
+      <option name="METHOD_NAME" value="createProductShouldCallRepositoryAndMapper1Time" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductServiceImplTest.updateStockShouldCallRepository2Times" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tdd-orders" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="service.impl" />
+      <option name="MAIN_CLASS_NAME" value="service.impl.ProductServiceImplTest" />
+      <option name="METHOD_NAME" value="updateStockShouldCallRepository2Times" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ProductServiceImplTest" />
+        <item itemvalue="JUnit.ProductServiceImplTest.updateStockShouldCallRepository2Times" />
+        <item itemvalue="JUnit.ProductServiceImplTest.createProductShouldCallRepositoryAndMapper1Time" />
+        <item itemvalue="JUnit.CustomerServiceImplTest" />
+        <item itemvalue="JUnit.CustomerServiceImplTest.deleteCustomerShouldCallRepository1Time" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -47,7 +190,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1727884311301</updated>
-      <workItem from="1727884312255" duration="2000" />
+      <workItem from="1727884312255" duration="14175000" />
     </task>
     <servers />
   </component>

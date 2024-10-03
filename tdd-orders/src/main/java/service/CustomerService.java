@@ -5,8 +5,8 @@ import model.Customer;
 public interface CustomerService {
 
     void createCustomer(Customer customer);
-    Customer getCustomer(long id);
-    void updateCustomer(Customer customer);
-    void deleteCustomer(long id);
+    Customer getCustomerById(Long id);
+    void saveCustomer(Customer customer);
+    void deleteCustomer(Long id);
 
 }
