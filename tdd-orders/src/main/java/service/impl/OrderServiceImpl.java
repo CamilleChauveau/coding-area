@@ -33,12 +33,18 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public List<Order> getOrdersByCustomerId(Long customerId) {
-        return List.of();
+        List<OrderEntity> entities = this.orderRepository.findAllByCustomerId(customerId);
+        return entities.stream()
+                .map(orderEntity -> this.orderMapper.toDto(orderEntity))
+                .toList();
     }
 
     @Override
     public List<Order> getOrdersByStatus(OrderStatus orderStatus) {
-        return List.of();
+        List<OrderEntity> entities = this.orderRepository.findAllByOrderStatus(orderStatus);
+        return entities.stream()
+                .map(orderEntity -> this.orderMapper.toDto(orderEntity))
+                .toList();
     }
 
     @Override
@@ -48,7 +54,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public void deleteOrder(Long id) {
-
+        this.orderRepository.deleteById(id);
     }
 
 }
