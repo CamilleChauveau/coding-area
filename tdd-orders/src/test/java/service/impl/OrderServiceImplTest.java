@@ -1,6 +1,9 @@
 package service.impl;
 
+import entity.OrderEntity;
 import enums.OrderStatus;
+import mapper.OrderMapper;
+import mapper.OrderMapperImpl;
 import model.Order;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -11,7 +14,6 @@ import org.mockito.MockitoAnnotations;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 import repository.OrderRepository;
-import service.OrderService;
 
 import java.util.Map;
 
@@ -27,7 +29,7 @@ class OrderServiceImplTest {
     @Spy
     private OrderMapper orderMapper;
     @InjectMocks
-    private OrderService orderService;
+    private OrderServiceImpl orderServiceImpl;
 
     // Constantes
     private final Long ID = 1L;
@@ -47,7 +49,7 @@ class OrderServiceImplTest {
         Order order = new Order(ID, CUSTOMER_ID, PRODUCTS_ID_AND_QUANTITY, STATUS);
 
         // When
-        this.orderService.placeOrder(order);
+        this.orderServiceImpl.placeOrder(order);
 
         // Then
         verify(orderMapper, times(1)).toEntity(order);
