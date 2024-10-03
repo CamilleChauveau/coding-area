@@ -1,5 +1,6 @@
 package service.impl;
 
+import entity.OrderEntity;
 import enums.OrderStatus;
 import mapper.OrderMapper;
 import model.Order;
@@ -20,7 +21,8 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public void placeOrder(Order order) {
-
+        OrderEntity entity = this.orderMapper.toEntity(order);
+        this.orderRepository.save(entity);
     }
 
     @Override
