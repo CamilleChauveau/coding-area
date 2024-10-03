@@ -17,9 +17,9 @@ import repository.OrderRepository;
 
 import java.util.Map;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class OrderServiceImplTest {
@@ -54,6 +54,23 @@ class OrderServiceImplTest {
         // Then
         verify(orderMapper, times(1)).toEntity(order);
         verify(orderRepository, times(1)).save(any(OrderEntity.class));
+    }
+
+    @Test
+    public void getOrderStatusShouldReturnStatus() {
+        // Given
+        OrderEntity entity = new OrderEntity(ID, CUSTOMER_ID, PRODUCTS_ID_AND_QUANTITY, STATUS);
+
+        // Mock
+        when(orderRepository.findById(anyLong())).thenReturn(entity);
+
+        // When
+        OrderStatus returnedStatus = this.orderServiceImpl.getOrderStatus(ID);
+
+        // Then
+        verify(orderRepository, times(1)).findById(ID);
+        assertEquals(STATUS, returnedStatus);
+
     }
 
 }
