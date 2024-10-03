@@ -27,7 +27,8 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public OrderStatus getOrderStatus(Long id) {
-        return null;
+        OrderEntity entity = this.orderRepository.findById(id);
+        return entity.getStatus();
     }
 
     @Override
