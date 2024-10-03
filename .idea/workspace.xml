@@ -62,6 +62,7 @@
     "JUnit.CustomerServiceImplTest.getCustomerByIdShouldReturnCustomer.executor": "Run",
     "JUnit.CustomerServiceImplTest.updateCustomerShouldCallRepositoryAndMapper1Time.executor": "Run",
     "JUnit.OrderServiceImplTest.executor": "Run",
+    "JUnit.OrderServiceImplTest.placeOrderShouldCallRepositoryAndMapperOnce.executor": "Run",
     "JUnit.ProductServiceImplTest.createProductShouldCallRepositoryAndMapper1Time.executor": "Run",
     "JUnit.ProductServiceImplTest.executor": "Run",
     "JUnit.ProductServiceImplTest.updateStockShouldCallRepository2Times.executor": "Run",
@@ -90,7 +91,7 @@
       <recent name="service.impl" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.OrderServiceImplTest.placeOrderShouldCallRepositoryAndMapperOnce">
+  <component name="RunManager" selected="JUnit.OrderServiceImplTest.getOrderStatusShouldReturnStatus">
     <configuration name="OrderServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tdd-orders" />
       <extension name="coverage">
@@ -102,6 +103,22 @@
       <option name="PACKAGE_NAME" value="service.impl" />
       <option name="MAIN_CLASS_NAME" value="service.impl.OrderServiceImplTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderServiceImplTest.getOrderStatusShouldReturnStatus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tdd-orders" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="service.impl" />
+      <option name="MAIN_CLASS_NAME" value="service.impl.OrderServiceImplTest" />
+      <option name="METHOD_NAME" value="getOrderStatusShouldReturnStatus" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -137,22 +154,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductServiceImplTest.createProductShouldCallRepositoryAndMapper1Time" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="tdd-orders" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="service.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="service.impl" />
-      <option name="MAIN_CLASS_NAME" value="service.impl.ProductServiceImplTest" />
-      <option name="METHOD_NAME" value="createProductShouldCallRepositoryAndMapper1Time" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ProductServiceImplTest.updateStockShouldCallRepository2Times" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tdd-orders" />
       <extension name="coverage">
@@ -171,11 +172,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.OrderServiceImplTest.getOrderStatusShouldReturnStatus" />
         <item itemvalue="JUnit.OrderServiceImplTest.placeOrderShouldCallRepositoryAndMapperOnce" />
         <item itemvalue="JUnit.OrderServiceImplTest" />
         <item itemvalue="JUnit.ProductServiceImplTest" />
         <item itemvalue="JUnit.ProductServiceImplTest.updateStockShouldCallRepository2Times" />
-        <item itemvalue="JUnit.ProductServiceImplTest.createProductShouldCallRepositoryAndMapper1Time" />
       </list>
     </recent_temporary>
   </component>
@@ -195,7 +196,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1727884311301</updated>
-      <workItem from="1727884312255" duration="16091000" />
+      <workItem from="1727884312255" duration="16610000" />
     </task>
     <servers />
   </component>
