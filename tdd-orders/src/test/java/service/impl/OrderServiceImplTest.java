@@ -1,10 +1,12 @@
 package service.impl;
 
 import entity.OrderEntity;
+import entity.ProductEntity;
 import enums.OrderStatus;
 import mapper.OrderMapper;
 import mapper.OrderMapperImpl;
 import model.Order;
+import model.Product;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -14,7 +16,11 @@ import org.mockito.MockitoAnnotations;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 import repository.OrderRepository;
+import repository.ProductRepository;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -32,12 +38,17 @@ class OrderServiceImplTest {
     private OrderMapper orderMapper;
     @InjectMocks
     private OrderServiceImpl orderServiceImpl;
+    @Mock
+    private ProductRepository productRepository;
 
     // Constantes
     private final Long[] IDS = {1L, 2L};
     private final Long CUSTOMER_ID = 1L;
-    private final Map<Long, Integer> PRODUCTS_ID_AND_QUANTITY = Map.of();
+    private final Map<Long, Integer> PRODUCTS_ID_AND_QUANTITY = new HashMap<>();
     private final OrderStatus STATUS = OrderStatus.PENDING;
+    private final double EIGHT_BOXES_SHELF_PRICE = 99.99;
+    private final double SIX_BOXES_SHELF_PRICE = 79.99;
+    private final double FOUR_BOXES_SHELF_PRICE = 59.99;
 
     @BeforeEach
     public void setUp() {
@@ -133,6 +144,65 @@ class OrderServiceImplTest {
 
         // Then
         verify(orderRepository, times(1)).deleteById(IDS[0]);
+    }
+
+    @Test
+    public void calculateTotalAmountShouldReturnPriceOfOneProduct() {
+        // Given
+        int stockForEachProduct = 2;
+        initMapProductsAndQuantity(1, stockForEachProduct);
+        Order order = new Order(IDS[0], CUSTOMER_ID, PRODUCTS_ID_AND_QUANTITY, STATUS);
+        List<ProductEntity> productsEntities = createProducts(ProductEntity.class, 1);
+
+        // Mock
+        when(productRepository.findById(anyLong()))
+                .thenReturn(productsEntities.get(0));
+
+        // When
+        BigDecimal totalAmount = orderServiceImpl.calculateTotalOrderAmount(order);
+
+        // Then
+        BigDecimal expected = BigDecimal.valueOf(EIGHT_BOXES_SHELF_PRICE).multiply(BigDecimal.valueOf(stockForEachProduct));
+        assertEquals(expected, totalAmount);
+        verify(productRepository, times(1)).findById(anyLong());
+    }
+
+
+    private void initMapProductsAndQuantity(int numberProducts, int stockForEachProduct) {
+        List<Product> products = createProducts(Product.class, numberProducts);
+        products.forEach(product -> {
+            PRODUCTS_ID_AND_QUANTITY.put(product.id(), stockForEachProduct);
+        });
+    }
+
+    private <T> List<T> createProducts(Class<T> type, int numberProducts) {
+
+        if (type == Product.class) {
+            List<T> products = new ArrayList<>();
+            if (numberProducts == 1) {
+                products.add(type.cast(new Product(1L, "Shelf", "Eight boxes shelf", EIGHT_BOXES_SHELF_PRICE, 2)));
+            }
+            if (numberProducts > 1) {
+                products.add(type.cast(new Product(2L, "Shelf", "Six boxes shelf", SIX_BOXES_SHELF_PRICE, 2)));
+            }
+            if (numberProducts > 2) {
+                products.add(type.cast(new Product(3L, "Shelf", "Four boxes shelf", FOUR_BOXES_SHELF_PRICE, 2)));
+            }
+            return products;
+        } else if (type == ProductEntity.class) {
+            List<T> products = new ArrayList<>();
+            if (numberProducts == 1) {
+                products.add(type.cast(new ProductEntity(1L, "Shelf", "Eight boxes shelf", EIGHT_BOXES_SHELF_PRICE, 2)));
+            }
+            if (numberProducts > 1) {
+                products.add(type.cast(new ProductEntity(2L, "Shelf", "Six boxes shelf", SIX_BOXES_SHELF_PRICE, 2)));
+            }
+            if (numberProducts > 2) {
+                products.add(type.cast(new ProductEntity(3L, "Shelf", "Four boxes shelf", FOUR_BOXES_SHELF_PRICE, 2)));
+            }
+            return products;
+        }
+        throw new IllegalArgumentException("Unknown type: " + type);
     }
 
 }
