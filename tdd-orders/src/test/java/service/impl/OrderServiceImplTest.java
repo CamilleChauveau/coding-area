@@ -167,6 +167,32 @@ class OrderServiceImplTest {
         verify(productRepository, times(1)).findById(anyLong());
     }
 
+    @Test
+    public void calculateTotalAmountShouldReturnSumOfProducts() {
+        // Given
+        int stockForEachProduct = 2;
+        initMapProductsAndQuantity(3, stockForEachProduct);
+        Order order = new Order(IDS[0], CUSTOMER_ID, PRODUCTS_ID_AND_QUANTITY, STATUS);
+        List<ProductEntity> productsEntities = createProducts(ProductEntity.class, 3);
+
+        // Mock
+        when(productRepository.findById(anyLong()))
+                .thenReturn(productsEntities.get(0))
+                .thenReturn(productsEntities.get(1))
+                .thenReturn(productsEntities.get(2));
+
+        // When
+        BigDecimal totalAmount = orderServiceImpl.calculateTotalOrderAmount(order);
+
+        // Then
+        BigDecimal expected = BigDecimal.valueOf(EIGHT_BOXES_SHELF_PRICE).multiply(BigDecimal.valueOf(stockForEachProduct))
+                .add(BigDecimal.valueOf(SIX_BOXES_SHELF_PRICE).multiply(BigDecimal.valueOf(stockForEachProduct)))
+                .add(BigDecimal.valueOf(FOUR_BOXES_SHELF_PRICE).multiply(BigDecimal.valueOf(stockForEachProduct)));
+
+        verify(productRepository, times(3)).findById(anyLong());
+        assertEquals(expected, totalAmount);
+    }
+
 
     private void initMapProductsAndQuantity(int numberProducts, int stockForEachProduct) {
         List<Product> products = createProducts(Product.class, numberProducts);
@@ -179,7 +205,7 @@ class OrderServiceImplTest {
 
         if (type == Product.class) {
             List<T> products = new ArrayList<>();
-            if (numberProducts == 1) {
+            if (numberProducts >= 1) {
                 products.add(type.cast(new Product(1L, "Shelf", "Eight boxes shelf", EIGHT_BOXES_SHELF_PRICE, 2)));
             }
             if (numberProducts > 1) {
@@ -191,7 +217,7 @@ class OrderServiceImplTest {
             return products;
         } else if (type == ProductEntity.class) {
             List<T> products = new ArrayList<>();
-            if (numberProducts == 1) {
+            if (numberProducts >= 1) {
                 products.add(type.cast(new ProductEntity(1L, "Shelf", "Eight boxes shelf", EIGHT_BOXES_SHELF_PRICE, 2)));
             }
             if (numberProducts > 1) {

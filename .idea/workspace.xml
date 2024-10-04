@@ -63,6 +63,7 @@
     "JUnit.OrderServiceImplTest.calculateTotalAmountShouldReturn200.executor": "Run",
     "JUnit.OrderServiceImplTest.calculateTotalAmountShouldReturnPriceOfOneProduct.executor": "Debug",
     "JUnit.OrderServiceImplTest.calculateTotalAmountShouldReturnSumOfProducts.executor": "Run",
+    "JUnit.OrderServiceImplTest.deleteOrderShouldCallRepositoryOnce.executor": "Run",
     "JUnit.OrderServiceImplTest.executor": "Run",
     "JUnit.OrderServiceImplTest.getOrderByStatusShouldReturn2Orders.executor": "Run",
     "JUnit.OrderServiceImplTest.getOrderStatusShouldReturnStatus.executor": "Run",
@@ -97,7 +98,7 @@
       <recent name="service.impl" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.OrderServiceImplTest.calculateTotalAmountShouldReturnPriceOfOneProduct">
+  <component name="RunManager" selected="JUnit.OrderServiceImplTest.calculateTotalAmountShouldReturnSumOfProducts">
     <configuration name="OrderServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tdd-orders" />
       <extension name="coverage">
@@ -161,7 +162,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderServiceImplTest.getOrderByStatusShouldReturn2Orders" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OrderServiceImplTest.deleteOrderShouldCallRepositoryOnce" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tdd-orders" />
       <extension name="coverage">
         <pattern>
@@ -171,7 +172,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="service.impl" />
       <option name="MAIN_CLASS_NAME" value="service.impl.OrderServiceImplTest" />
-      <option name="METHOD_NAME" value="getOrderByStatusShouldReturn2Orders" />
+      <option name="METHOD_NAME" value="deleteOrderShouldCallRepositoryOnce" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -179,11 +180,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.OrderServiceImplTest.calculateTotalAmountShouldReturnPriceOfOneProduct" />
         <item itemvalue="JUnit.OrderServiceImplTest.calculateTotalAmountShouldReturnSumOfProducts" />
-        <item itemvalue="JUnit.OrderServiceImplTest.calculateTotalAmountShouldReturn200" />
         <item itemvalue="JUnit.OrderServiceImplTest" />
-        <item itemvalue="JUnit.OrderServiceImplTest.getOrderByStatusShouldReturn2Orders" />
+        <item itemvalue="JUnit.OrderServiceImplTest.deleteOrderShouldCallRepositoryOnce" />
+        <item itemvalue="JUnit.OrderServiceImplTest.calculateTotalAmountShouldReturnPriceOfOneProduct" />
+        <item itemvalue="JUnit.OrderServiceImplTest.calculateTotalAmountShouldReturn200" />
       </list>
     </recent_temporary>
   </component>
@@ -203,11 +204,22 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1727884311301</updated>
-      <workItem from="1727884312255" duration="27540000" />
+      <workItem from="1727884312255" duration="28436000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/tdd-orders/src/test/java/service/impl/OrderServiceImplTest.java</url>
+          <line>231</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
