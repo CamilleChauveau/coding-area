@@ -67,21 +67,14 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public BigDecimal calculateTotalOrderAmount(Order order) {
         Map<Long, Integer> productsIdsAndQuantity = order.productsIdsAndQuantity();
-        Map<ProductEntity, Integer> productsAndQuantity = new HashMap<>();
         BigDecimal totalOrderAmount = BigDecimal.ZERO;
 
         for (Map.Entry<Long, Integer> entry : productsIdsAndQuantity.entrySet()) {
             ProductEntity productEntity = productRepository.findById(entry.getKey());
             Integer quantity = entry.getValue();
-            productsAndQuantity.put(productEntity, quantity);
-        }
 
-        for (Map.Entry<ProductEntity, Integer> entry : productsAndQuantity.entrySet()) {
-            ProductEntity productEntity = entry.getKey();
-            Integer quantity = entry.getValue();
-            BigDecimal productPrice = BigDecimal.valueOf(productEntity.getPrice());
-            BigDecimal totalPriceForSameProduct = productPrice.multiply(BigDecimal.valueOf(quantity));
-            totalOrderAmount = totalOrderAmount.add(totalPriceForSameProduct);
+            totalOrderAmount = totalOrderAmount.add(BigDecimal.valueOf(productEntity.getPrice())
+                    .multiply(BigDecimal.valueOf(quantity)));
         }
 
         return totalOrderAmount;

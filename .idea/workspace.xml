@@ -17,6 +17,7 @@
       <change beforePath="$PROJECT_DIR$/tdd-orders/src/main/java/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/tdd-orders/src/main/java/service/OrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tdd-orders/src/main/java/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/tdd-orders/src/main/java/service/ProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tdd-orders/src/main/java/service/impl/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/tdd-orders/src/main/java/service/impl/CustomerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tdd-orders/src/main/java/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/tdd-orders/src/main/java/service/impl/OrderServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tdd-orders/src/main/java/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/tdd-orders/src/main/java/service/impl/ProductServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tdd-orders/src/test/java/service/impl/CustomerServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tdd-orders/src/test/java/service/impl/CustomerServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tdd-orders/src/test/java/service/impl/OrderServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tdd-orders/src/test/java/service/impl/OrderServiceImplTest.java" afterDir="false" />
@@ -61,7 +62,6 @@
     "JUnit.CustomerServiceImplTest.updateCustomerShouldCallRepositoryAndMapper1Time.executor": "Run",
     "JUnit.OrderServiceImplTest.calculateTotalAmountShouldReturn200.executor": "Run",
     "JUnit.OrderServiceImplTest.calculateTotalAmountShouldReturnPriceOfOneProduct.executor": "Debug",
-    "JUnit.OrderServiceImplTest.calculateTotalAmountShouldReturnPriceOfOneProduct.executor": "Run",
     "JUnit.OrderServiceImplTest.calculateTotalAmountShouldReturnSumOfProducts.executor": "Run",
     "JUnit.OrderServiceImplTest.executor": "Run",
     "JUnit.OrderServiceImplTest.getOrderByStatusShouldReturn2Orders.executor": "Run",
@@ -171,7 +171,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="service.impl" />
       <option name="MAIN_CLASS_NAME" value="service.impl.OrderServiceImplTest" />
-      <option name="METHOD_NAME" value="calculateTotalAmountShouldReturn200" />
+      <option name="METHOD_NAME" value="getOrderByStatusShouldReturn2Orders" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -203,27 +203,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1727884311301</updated>
-      <workItem from="1727884312255" duration="27120000" />
+      <workItem from="1727884312255" duration="27540000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/tdd-orders/src/test/java/service/impl/OrderServiceImplTest.java</url>
-          <line>178</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/tdd-orders/src/test/java/service/impl/OrderServiceImplTest.java</url>
-          <line>201</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
