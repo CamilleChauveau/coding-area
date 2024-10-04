@@ -14,6 +14,7 @@
       <change beforePath="$PROJECT_DIR$/tdd-orders/src/main/java/repository/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/tdd-orders/src/main/java/repository/CustomerRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tdd-orders/src/main/java/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/tdd-orders/src/main/java/repository/ProductRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tdd-orders/src/main/java/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/tdd-orders/src/main/java/service/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tdd-orders/src/main/java/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/tdd-orders/src/main/java/service/OrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tdd-orders/src/main/java/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/tdd-orders/src/main/java/service/ProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tdd-orders/src/main/java/service/impl/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/tdd-orders/src/main/java/service/impl/CustomerServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tdd-orders/src/main/java/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/tdd-orders/src/main/java/service/impl/ProductServiceImpl.java" afterDir="false" />
@@ -60,6 +61,7 @@
     "JUnit.CustomerServiceImplTest.updateCustomerShouldCallRepositoryAndMapper1Time.executor": "Run",
     "JUnit.OrderServiceImplTest.calculateTotalAmountShouldReturn200.executor": "Run",
     "JUnit.OrderServiceImplTest.calculateTotalAmountShouldReturnPriceOfOneProduct.executor": "Debug",
+    "JUnit.OrderServiceImplTest.calculateTotalAmountShouldReturnPriceOfOneProduct.executor": "Run",
     "JUnit.OrderServiceImplTest.calculateTotalAmountShouldReturnSumOfProducts.executor": "Run",
     "JUnit.OrderServiceImplTest.executor": "Run",
     "JUnit.OrderServiceImplTest.getOrderByStatusShouldReturn2Orders.executor": "Run",
@@ -95,7 +97,7 @@
       <recent name="service.impl" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.OrderServiceImplTest.deleteOrderShouldCallRepositoryOnce">
+  <component name="RunManager" selected="JUnit.OrderServiceImplTest.calculateTotalAmountShouldReturnPriceOfOneProduct">
     <configuration name="OrderServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tdd-orders" />
       <extension name="coverage">
@@ -159,7 +161,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderServiceImplTest.deleteOrderShouldCallRepositoryOnce" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OrderServiceImplTest.getOrderByStatusShouldReturn2Orders" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tdd-orders" />
       <extension name="coverage">
         <pattern>
@@ -169,7 +171,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="service.impl" />
       <option name="MAIN_CLASS_NAME" value="service.impl.OrderServiceImplTest" />
-      <option name="METHOD_NAME" value="deleteOrderShouldCallRepositoryOnce" />
+      <option name="METHOD_NAME" value="calculateTotalAmountShouldReturn200" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -177,11 +179,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.OrderServiceImplTest.deleteOrderShouldCallRepositoryOnce" />
-        <item itemvalue="JUnit.OrderServiceImplTest.calculateTotalAmountShouldReturnSumOfProducts" />
         <item itemvalue="JUnit.OrderServiceImplTest.calculateTotalAmountShouldReturnPriceOfOneProduct" />
+        <item itemvalue="JUnit.OrderServiceImplTest.calculateTotalAmountShouldReturnSumOfProducts" />
         <item itemvalue="JUnit.OrderServiceImplTest.calculateTotalAmountShouldReturn200" />
         <item itemvalue="JUnit.OrderServiceImplTest" />
+        <item itemvalue="JUnit.OrderServiceImplTest.getOrderByStatusShouldReturn2Orders" />
       </list>
     </recent_temporary>
   </component>
@@ -201,7 +203,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1727884311301</updated>
-      <workItem from="1727884312255" duration="27873000" />
+      <workItem from="1727884312255" duration="27120000" />
     </task>
     <servers />
   </component>

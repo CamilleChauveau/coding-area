@@ -1,22 +1,29 @@
 package service.impl;
 
 import entity.OrderEntity;
+import entity.ProductEntity;
 import enums.OrderStatus;
 import mapper.OrderMapper;
 import model.Order;
 import repository.OrderRepository;
+import repository.ProductRepository;
 import service.OrderService;
 
+import java.math.BigDecimal;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class OrderServiceImpl implements OrderService {
 
     private OrderMapper orderMapper;
     private OrderRepository orderRepository;
+    private ProductRepository productRepository;
 
-    public OrderServiceImpl(OrderMapper orderMapper, OrderRepository orderRepository) {
+    public OrderServiceImpl(OrderMapper orderMapper, OrderRepository orderRepository, ProductRepository productRepository) {
         this.orderMapper = orderMapper;
         this.orderRepository = orderRepository;
+        this.productRepository = productRepository;
     }
 
     @Override
@@ -56,5 +63,29 @@ public class OrderServiceImpl implements OrderService {
     public void deleteOrder(Long id) {
         this.orderRepository.deleteById(id);
     }
+
+    @Override
+    public BigDecimal calculateTotalOrderAmount(Order order) {
+        Map<Long, Integer> productsIdsAndQuantity = order.productsIdsAndQuantity();
+        Map<ProductEntity, Integer> productsAndQuantity = new HashMap<>();
+        BigDecimal totalOrderAmount = BigDecimal.ZERO;
+
+        for (Map.Entry<Long, Integer> entry : productsIdsAndQuantity.entrySet()) {
+            ProductEntity productEntity = productRepository.findById(entry.getKey());
+            Integer quantity = entry.getValue();
+            productsAndQuantity.put(productEntity, quantity);
+        }
+
+        for (Map.Entry<ProductEntity, Integer> entry : productsAndQuantity.entrySet()) {
+            ProductEntity productEntity = entry.getKey();
+            Integer quantity = entry.getValue();
+            BigDecimal productPrice = BigDecimal.valueOf(productEntity.getPrice());
+            BigDecimal totalPriceForSameProduct = productPrice.multiply(BigDecimal.valueOf(quantity));
+            totalOrderAmount = totalOrderAmount.add(totalPriceForSameProduct);
+        }
+
+        return totalOrderAmount;
+    }
+
 
 }
